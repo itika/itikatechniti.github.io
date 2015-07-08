@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SMINT Demo</title>
+<!---------------------------->
+<link rel="stylesheet" type="text/css" media="screen" href="css/sequencejs-theme.sliding-horizontal-parallax.css" />
+	<link rel="stylesheet" type="text/css" href="images/css/grid-accordion-example1.css" media="screen">
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+	if (typeof jQuery == 'undefined'){
+	    document.write(unescape("%3Cscript src=js/jquery.js type='text/javascript'%3E%3C/script%3E"));
+	}
+	</script>
+	<script type="text/javascript" src="js/sequence.jquery-min.js"></script>
+           
+        <script type="text/javascript" src="js/chillers.js">
+           </script>
+	<script type="text/javascript">	
+		$(document).ready(function(){
+			var options = {
+				autoPlay: false,
+				autoPlayDirection: 1,
+				nextButton: ".next",
+				prevButton: ".prev",
+				prependNextButton: false,
+				prependPrevButton: false,
+				pauseIcon: false,
+				animateStartingFrameIn: false, 
+				delayDuringOutInTransitions: false
+			};
+
+			var slideShow = $("#slideshow").sequence(options).data("sequence");
+			
+			$(".prev, .next").show();
+		})
+	</script>
+    <!----------------------->
+    
+		<script src="js/cufon-yui.js" type="text/javascript"></script>
+		<script src="js/Cantarell.font.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			Cufon.replace('a,h3');
+			Cufon.replace('h1', {
+				textShadow: '0px 1px #fff'
+			});
+			Cufon.replace('h2', {
+				textShadow: '0px 1px #fff'
+			});
+		</script>
+       
+    <!------------------------------>
+    
+    <script type="text/javascript" src="js/workshop.js"> 
+</script>
+    
+    <!----------------------->
+    	<script src="js/menu.js" type="text/javascript"></script>
+
+    
+    <!---------------------->
+    
+    <link rel="stylesheet" type="text/css" href="css2/demo.css" />
+		
+    
+    <!------------------------->
+<script src="src/skdslider.js"></script>
+<link href="src/skdslider.css" rel="stylesheet">
+<script type="text/javascript">
+		jQuery(document).ready(function(){
+			jQuery('#demo').skdslider({'delay':10000, 'fadeSpeed': 5000,'showNextPrev':true,'showPlayButton':false,'autoStart':true});
+		});
+</script>
+<style type="text/css">
+.demo-code{ background-color:#ffffff; border:1px solid #333333; display:block; padding:10px;}
+</style>
+    
+    <!--------------------->
+    
+    <link href="mapStyles.css" rel="stylesheet" type="text/css">
+
+    
+    
+    <!------------------->
+    
+    <link rel="stylesheet" type="text/css" href="images/css/grid-accordion.css" media="screen">
+<link rel="stylesheet" type="text/css" href="images/css/style.css" media="screen">
+<script type="text/javascript" src="images/js/jquery.gridAccordion.min.js"></script>
+<script type="text/javascript">
+	
+jQuery(document).ready(function($) {
+    $('.accordion').gridAccordion({
+        width: 750,
+        height: 525,
+        columns: 4,
+        distance: 2,
+        closedPanelWidth: 10,
+        closedPanelHeight: 10,
+        alignType: 'centerCenter',
+        slideshow: true,
+        panelProperties: {
+            0 : {
+                captionWidth: 200,
+                captionHeight: 35,
+                captionTop: 30,
+                captionLeft: 30
+            },
+            4 : {
+                captionWidth: 150,
+                captionHeight: 100,
+                captionTop: 30,
+                captionLeft: 650
+            },
+            7 : {
+                captionWidth: 310,
+                captionHeight: 35,
+                captionTop: 350,
+                captionLeft: 40
+            },
+            8 : {
+                captionWidth: 300,
+                captionHeight: 40,
+                captionTop: 150,
+                captionLeft: 35
+            },
+            11 : {
+                captionWidth: 150,
+                captionHeight: 120,
+                captionTop: 300,
+                captionLeft: 30
+            },
+            14 : {
+                captionWidth: 300,
+                captionHeight: 40,
+                captionTop: 30,
+                captionLeft: 50
+            },
+            16 : {
+                captionWidth: 150,
+                captionHeight: 120,
+                captionTop: 150,
+                captionLeft: 10
+            },
+            18 : {
+                captionWidth: 300,
+                captionHeight: 40,
+                captionTop: 130,
+                captionLeft: 50
+            }
+        }
+    });
+});
+	
+</script>
+    
+    <!-------------------------->
+    
+<link href="css/demo.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" 	src="js/jquery.smint.js"></script>
+<script type="text/javascript">
+	
+$(document).ready( function() {
+    $('.subMenu').smint({
+    	'scrollSpeed' : 1000
+    });
+});
+
+</script>
+
+
+
+
+<script src="js/jquery.easing.1.3.js"></script>
+<script>
+
+$(document).ready(function() {
+
+	//Custom settings
+	var style_in = 'easeOutBounce';
+	var style_out = 'jswing';
+	var speed_in = 1000;
+	var speed_out = 300;	
+
+	//Calculation for corners
+	var neg = Math.round($('.qitem').width() / 2) * (-1);	
+	var pos = neg * (-1);	
+	var out = pos * 2;
+	
+	$('.qitem').each(function () {
+	
+		url = $(this).find('a').attr('href');
+		img = $(this).find('img').attr('src');
+		alt = $(this).find('img').attr('img');
+		
+		$('img', this).remove();
+		$(this).append('<div class="topLeft"></div><div class="topRight"></div><div class="bottomLeft"></div><div class="bottomRight"></div>');
+		$(this).children('div').css('background-image','url('+ img + ')');
+
+		$(this).find('div.topLeft').css({top:0, left:0, width:pos , height:pos});	
+		$(this).find('div.topRight').css({top:0, left:pos, width:pos , height:pos});	
+		$(this).find('div.bottomLeft').css({bottom:0, left:0, width:pos , height:pos});	
+		$(this).find('div.bottomRight').css({bottom:0, left:pos, width:pos , height:pos});	
+
+	}).hover(function () {
+	
+		$(this).find('div.topLeft').stop(false, true).animate({top:neg, left:neg}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.topRight').stop(false, true).animate({top:neg, left:out}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.bottomLeft').stop(false, true).animate({bottom:neg, left:neg}, {duration:speed_out, easing:style_out});	
+		$(this).find('div.bottomRight').stop(false, true).animate({bottom:neg, left:out}, {duration:speed_out, easing:style_out});	
+				
+	},
+	
+	function () {
+
+		$(this).find('div.topLeft').stop(false, true).animate({top:0, left:0}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.topRight').stop(false, true).animate({top:0, left:pos}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.bottomLeft').stop(false, true).animate({bottom:0, left:0}, {duration:speed_in, easing:style_in});	
+		$(this).find('div.bottomRight').stop(false, true).animate({bottom:0, left:pos}, {duration:speed_in, easing:style_in});	
+	
+	}).click (function () {
+		window.location = $(this).find('a').attr('href');	
+	});
+	
+	
+
+});
+
+</script>
+</head>
+
+<body>
+	<div class="wrap">
+
+	  <div class="subMenu" >
+	 	<div class="inner">
+	 	 <a href="#" id="sTop" class="subNavBtn">Home</a> 
+			<a href="#" id="s1" class="subNavBtn">Section 1</a>
+			<a href="#" id="s2" class="subNavBtn">Section 2</a>
+			<a href="#" id="s3" class="subNavBtn">Section 3</a>
+			<a href="#" id="s4" class="subNavBtn">Section 4</a>
+            <a href="#" id="s5" class="subNavBtn">Section 5</a>
+			<a href="#" id="s7" class="subNavBtn end">Section 7</a>
+
+
+
+
+
+		</div>
+		
+		
+				
+	</div>
+
+
+	<div class="section sTop">
+		
+
+
+		<div class="inner">
+			<div id="demo" class="skdslider">
+<ul>
+<li>
+<img src="images/background2.gif" />
+<!--Slider Description example-->
+ <div class="slide-desc">
+		
+  </div>
+</li>
+<li><img src="images/background1.gif" />
+   <div class="slide-desc">
+		
+  </div>
+</li>
+</ul>
+</div>
+		</div>
+		<br class="clear">
+	</div>
+
+
+
+
+
+	<div class="section s1">
+		
+		<div class="inner">
+<div id="header">
+		<div id="slideshow">
+			<img class="prev" src="images/bt-prev.png" alt="Previous" />
+			<img class="next" src="images/bt-next.png" alt="Next" />
+			<ul>
+				<li>
+					<div class="info animate-in">
+					<ul class="accordion">
+  <li> <a href="#"><img src="images/001/image1.jpg" alt=""></a></li>
+  <li> <a href="#"><img src="images/001/image2.jpg" alt=""></a> </li>
+  <li> <a href="#"><img src="images/001/image4.jpg" alt=""></a> </li>
+  <li> <a href="#"><img src="images/001/image5.jpg" alt=""></a>
+</li>
+  <li> <a href="#"><img src="images/001/image1.jpg" alt=""></a> </li>
+  <li> <a href="#"><img src="images/001/image2.jpg" alt=""></a>
+  </li>
+  <li> <a href="#"><img src="images/001/image4.jpg" alt=""></a>
+   
+  </li>
+  <li> <a href="#"><img src="images/001/image5.jpg" alt=""></a> </li>
+  <li> <a href="#"><img src="images/001/image1.jpg" alt=""></a> </li>
+  <li> <a href="#"><img src="images/001/image2.jpg" alt=""></a>
+      </li>
+  <li> <a href="#"><img src="images/001/image4.jpg" alt=""></a> </li>
+  <li> <a href="#"><img src="images/001/image5.jpg" alt=""></a>
+  </li>
+  <li> <a href="#"><img src="images/001/image1.jpg" alt=""></a> </li>
+  <li> <a href="#"><img src="images/001/image2.jpg" alt=""></a>
+  </li>
+  <li> <a href="#"><img src="images/001/image4.jpg" alt=""></a>
+ </li>
+  <li> <a href="#"><img src="images/001/image5.jpg" alt=""></a> </li>
+</ul>
+                    </div>
+					<img class="sky animate-in" src="images/back.jpg" alt="Blue Sky" />
+					<img class="aeroplane animate-in" src="images/text.png" alt="Balloon" />
+				</li>
+				<li>
+					<div class="info3">
+						<div id="content">
+            <ul class="dept" id="dept">
+                <li class="bg1">
+                    <div class="heading">Guler</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Guler</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                            ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                            nulla pariatur.</p>
+                        <a href="#">more &rarr;</a>
+                    </div>
+                </li>
+                <li class="bg2">
+                    <div class="heading">Phillips</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Phillips</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                            quae ab illo inventore veritatis et quasi architecto beatae vitae
+                            dicta sunt explicabo. </p>
+                        <a href="#">more &rarr;</a>
+                    </div>
+
+                </li>
+                <li class="bg3">
+                    <div class="heading">Phillips</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Phillips</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                            quae ab illo inventore veritatis et quasi architecto beatae vitae
+                            dicta sunt explicabo. </p>
+                        <a href="#">more &rarr;</a>
+                    </div>
+
+                </li>
+                <li class="bg4">
+                    <div class="heading">Phillips</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Phillips</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                            quae ab illo inventore veritatis et quasi architecto beatae vitae
+                            dicta sunt explicabo. </p>
+                        <a href="#">more &rarr;</a>
+                    </div>
+
+                </li>
+                <li class="bg5">
+                    <div class="heading">Diamanti</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Diamanti</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                            ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                            nulla pariatur.</p>
+                        <a href="#">more &rarr;</a>
+                    </div>
+
+                </li>
+                <li class="bg6 bleft">
+                    <div class="heading">Meiklejohn</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Meiklejohn</h2>
+                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                            quae ab illo inventore veritatis et quasi architecto beatae vitae
+                            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas
+                            sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+                            dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                        <a href="#">more &rarr;</a>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <!-- The JavaScript -->
+        <script type="text/javascript">
+            $(function() {
+                $('#dept > li').hover(
+                    function () {
+                        var $this = $(this);
+                        $this.stop().animate({'width':'380px'},380);
+                        $('.heading',$this).stop(true,true).fadeOut();
+                        $('.bgDescription',$this).stop(true,true).slideDown(500);
+                        $('.description',$this).stop(true,true).fadeIn();
+                    },
+                    function () {
+                        var $this = $(this);
+                        $this.stop().animate({'width':'115px'},1000);
+                        $('.heading',$this).stop(true,true).fadeIn();
+                        $('.description',$this).stop(true,true).fadeOut(500);
+                        $('.bgDescription',$this).stop(true,true).slideUp(700);
+                    }
+                );
+            });
+        </script>
+					</div>
+					<img class="sky" src="images/society.png" alt="Blue Sky" />
+					<img class="aeroplane" src="images/departmentalstext.png" alt="Aeroplane" />
+				</li>
+				<li>
+					<div class="info2" style="width:80%">
+						<div class="qitem" style="margin-left:205px; background:url(images/pics/ece1.png)">
+	<a href="http://www.google.com"><img src="images/pics/ece.png" alt="Test 1" title="" width="200" height="200"/></a>
+</div>
+
+<div class="qitem" style="background:url(images/pics/cse1.png)">
+	<a href="#"><img src="images/pics/cse.png" alt="Test 1" title="" width="200" height="200"/></a>
+</div>
+
+<div class="qitem" style="background:url(images/pics/bt1.jpg)">
+	<a href="#"><img src="images/pics/bt.png" alt="Test 1" title="" width="200" height="200"/></a>
+</div>
+
+<div class="qitem" style="background:url(images/pics/chem1.jpg)">
+	<a href="#"><img src="images/pics/chem.png" alt="Test 1" title="" width="200" height="200"/></a>
+</div>
+<div class="clear"></div>
+
+<div class="qitem" style="background:url(images/pics/ice1.jpg)">
+	<a href="#"><img src="images/pics/ice.png" alt="Test 1" title="" width="200" height="200"/></a>
+</div>
+
+<div class="qitem" style="background:url(images/pics/mech1.jpg)">
+	<a href="#"><img src="images/pics/mech.png" alt="Test 1" title="" width="200" height="200"/></a>
+</div>
+
+<div class="qitem" style="background:url(images/pics/tex1.jpg)">
+	<a href="#"><img src="images/pics/tex.png" alt="Test 1" title="" width="200" height="200"/></a>
+</div>
+
+<div class="qitem"  style="background:url(images/pics/ipe1.jpg)">
+	<a href="#"><img src="images/pics/ipe.png" alt="Test 1" title="" width="200" height="200"/></a>
+	<span class="caption"></span>
+</div>
+
+<div class="qitem" style="background:url(images/pics/civil1.png)">
+	<a href="#"><img src="images/pics/civil.png" alt="Test 1" title="" width="200" height="200"/></a>
+</div>
+
+					</div>
+					<img class="sky" src="images/departmentals.jpg" alt="Blue Sky" />
+					<img class="kite" src="images/departmentalstext.png" alt="Kite" />
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+		</div>
+
+	</div>
+
+	<div class="section s2">
+		<div class="inner">
+
+<div id="screen"></div>
+
+<div id="htmlBank">
+	<div id="txt1">
+		<div class="wrapper">
+		<img src="images/graphicID_2684_grey.jpg">B&uuml;dol&ouml;s mutaragran thamar so, ad dobiko gididols utans tak, lit enegen&uuml;koms esovob j&auml;fikol-li iv. L&auml;n kilas menam&ouml;dotis tu, dalilom&ouml;v osaunikob ukravom ati fa, domi fred da s&ouml;l. Ifi higok pac&ouml;det&ouml;n vo, ela c&ouml;dale eperon ofalons lo, b&uuml; blin&ouml;n fasilikum matedafideda bod. 
+		<br><br><img src="images/graphicID_2664_grey.jpg">
+		&Auml;nu bodeds votiki d&ouml;, fan&ouml;n ritan ted&ouml;n de oka. Begom dalilom&ouml;v stul dag ob. Ko enegen&uuml;koms lelifikam maket maf, efe binob esufob l&uuml;gons ok, l&ouml;p givoti odunob-li lo. Degol&ouml;n vinig sus v&uuml;, el denu j&ouml;niko kohorti k&ouml;m. Klaatu barada nikt&oacute;.
+		</div>
+	</div>
+	<div id="txt2">
+		<div class="wrapper">
+			<img src="images/graphicID_3952_grey.jpg">
+			Mem sagol-li sukubons me, &auml;s&auml; l&uuml; geton louni sapans. Olen&uuml;kobs-li vomi &uuml;n bel, vi binols&ouml;s pospear&uuml;kons vin. No cuk daniel hid&uuml;nana, zif ba mutaragran vitidab&auml;liped&ouml;mi. Bem si dugans goldi onegeton, bumotis b&uuml;dedis ot jol. Ati z&uuml; binom&ouml;d loveflano ut&ouml;pio, cil se badik binob ipubon. Oki tu jutedans nend&ouml;fiks pasat, iv oba diabis iacobus sagol&ouml;s, obi ab alphaeus klop&ouml;n mana.
+			<br><br>
+			<img src="images/12.jpg">
+			Yan ologons os&auml;mikebobs ma, jepa mans nineve b&uuml; yeb. Jep is b&uuml;dedis paglidols&ouml;d telis, ofi faemik fluks verat &uuml;f. &Auml;s&auml; d&ouml; bibiinolavanes fluks volut, domi pardols telis ab naf. &Uuml;n v&ouml;d geton verat, padakip&ouml;n tim&uuml;l ve&uuml;tikosi one de. K&ouml;m b&uuml;dol&ouml;s kapa l&uuml;daut z&uuml;, mid ga litik taledi verati, is flukis ukravom sap. So kana&auml;nik kl&ouml;fa nem&ouml;gik osi, me osavom urias tim. Fa esufob klifs ini, du d&uuml;n&ouml;n klin&uuml;kols b&uuml;&auml;, petrus p&ouml;pe temak&auml;d bu dag.
+		</div>
+	</div>
+	<div id="txt3">
+		<div class="wrapper">
+			<img src="images/graphicID_3018_grey.jpg">
+			Us bodi eleig&auml;dol l&auml;g&uuml;pt&auml;n tem, ix b&uuml;dedis kilas lanan oms. Po gal&auml;danefa neodons n&auml;m&auml;dikum div, g&ouml; dotols&ouml;v esasenols p&ouml;pa eli. L&auml;tikan sevob t&auml;len it iui, cif kildeg m&ouml;bemi s&uuml;mon el. B&uuml; ililoms kitimo lekl&auml;ra ele, ome l&auml; bibinolavanas elovegivol, fulons olikis temunods g&ouml; tab. Kinikis-li lebeg at bos, d&uuml;nanes klin&uuml;kols mid it. Ek&auml;lols ioatham pardols se &auml;nu, klin&uuml;kols lad&auml;ls tils dat v&uuml;. Beg vo isufof prodi, klotem p&ouml;ti temunods omi ba, gospul taledi v&ouml;naoloveikod ye p&ouml;p.
+			<br><br>
+			<img src="images/graphicID_1199_grey.jpg">
+			Ini meb&ouml;n zitevon &ouml;n. Pl&auml; lo kudols-li oglidols tal&auml;ntis, ga d&ouml;botis kime kohorti igo, do ofs jabata panemof-li. Tem benodi guverale pel&ouml;p&uuml;kols se, lio ya lad&auml;ls not&uuml;kols&ouml;d, vom ko neflenis p&ouml;pa suf&auml;l&ouml;n. Iv maf ekobikons godi lecenols&ouml;d, mem se padeid&ouml;n pardols. Ta folmilanas telid nek, num t&auml; atanes disi pardols. Bil k&uuml; aminadab foginan pejonedon, sui edabinon latik temi ed, bu get lecedons luslugols tim&uuml;.
+		</div>
+	</div>
+	<div id="txt4">
+		<div class="wrapper">
+			<img src="images/graphicID_1185_grey.jpg">
+			Caiphas p&ouml;pe sof&auml;lik ek li&ouml;, &uuml;n lif telans zibi. Iboidom latik pamojedon ye kas, flukis mutols sid n&ouml;. Me fred penegen&uuml;koms vi&auml;n bod, di dek&ouml;mom&ouml;d d&uuml;n&ouml;n fenig plu. Fluks obl&auml;fom zunon-li et pl&auml;, us fenols foginani kela nen. Sep se ledutoti magot prodi, fo sal binob geran, vio m&ouml; finots paf&ouml;lon suf&auml;l&ouml;n.
+			<br><br>
+			<img src="images/graphicID_2564_grey.jpg">
+			At esasenols olik p&ouml;pe son, foi letuvatam temak&auml;d vi&auml;n k&uuml;. Binols&ouml;s figabim soelik mot p&ouml;. Fluk&ouml;n klotem s&ouml;kol&ouml;d no iui, bel bi geted&ouml;n pakrod&ouml;n ukravom. Ut guverale lebeg olifon mal, k&uuml; alphaeus givoti l&ouml;f.	
+		</div>
+	</div>
+	<div id="txt41">
+		<div class="wrapper">
+			<img src="images/graphicID_3215_grey.jpg">
+			P&ouml;fans vinig sui vo, ods flit&auml;ms vipi volut bi. No ata maita nem&ouml;gik tim&uuml;l, ni binobs klop&ouml;n ok&auml;lom nos. Ols me klop posavon sejedon, ai l&auml;g&uuml;pt&auml;n ted&ouml;n uno&auml;dol j&uuml;s. Ya futi okoedoms vilon ofs, ya beg blods podesumon.		</div>
+	</div>
+	
+	<div id="thumb1"> 
+		<img src="images/thu_eve04.jpg">
+	</div>
+	<div id="thumb2"> 
+		<img src="images/thu_eve05.jpg">
+	</div>
+	<div id="thumb3"> 
+		<img src="images/thu_eve02.jpg">
+	</div>
+	
+</div>
+
+		</div>
+
+	</div>
+
+	<div class="section s3">
+		<div class="inner">
+<div class="container">
+			<div id="va-accordion" class="va-container">
+				<div class="va-nav">
+					<span class="va-nav-prev">Previous</span>
+					<span class="va-nav-next">Next</span>
+				</div>
+				<div class="va-wrapper">
+					<div class="va-slice va-slice-1">
+						<h3 class="va-title">Kiran Bedi</h3>
+						<div class="va-content">
+							<p>Kiran Bedi</p>
+							
+						</div>
+					</div>
+					<div class="va-slice va-slice-2">
+						<h3 class="va-title">Rakesh Sharma</h3>
+						<div class="va-content">
+							<p>Rakesh Sharma</p>
+						
+						</div>	
+					</div>
+					<div class="va-slice va-slice-3">
+						<h3 class="va-title">Anuj Dhar</h3>
+						<div class="va-content">
+							<p>Anuj Dhar</p>
+							
+						</div>	
+					</div>
+						</div>
+			</div>
+			
+		</div>
+		<script type="text/javascript" src="js/jquery.vaccordion.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#va-accordion').vaccordion();
+			});
+		</script>
+		</div>
+
+	</div>
+
+	<div class="section s4">
+		<div class="inner">
+
+<div class="content2">
+			
+			<div id="hs_container" class="hs_container">
+				<div class="hs_area hs_area1">
+					<img class="hs_visible" src="images/chillers/quarantine.jpg" alt=""/>
+					<img src="images/chillers/fation.jpg" alt=""/>
+				</div>
+				<div class="hs_area hs_area2">
+					<img class="hs_visible" src="images/chillers/blackjack.png" alt=""/>
+					<img src="images/chillers/roadies.jpg" alt=""/>
+				</div>
+				<div class="hs_area hs_area3">
+					<img class="hs_visible" src="images/chillers/ls.png" alt=""/>
+					<img src="images/chillers/pt.jpg" alt=""/>
+				</div>
+				<div class="hs_area hs_area4">
+					<img class="hs_visible" src="images/chillers/sc.png" alt=""/>
+					<img src="images/chillers/th.png" alt=""/>
+				</div>
+				<div class="hs_area hs_area5">
+					<img class="hs_visible" src="images/chillers/gaming.png" alt=""/>
+					<img src="images/chillers/Untitled-2.png" alt=""/>
+				</div>
+			</div>
+
+			
+		</div>
+		
+        <!-- The JavaScript -->
+
+        
+		</div>
+
+	</div>
+
+	<div class="section s5">
+		<div class="inner">
+		
+		<h1>Section 5</h1>
+		
+		</div>
+
+	</div>
+
+    
+	<div class="section s7">
+		<div class="inner">
+
+<div class="boundaries">
+  <section class="map" style="overflow:visible">
+	<div id="cover">
+    	<div id="back">
+        	<div id="layer1"></div>
+            <div id="layer2"></div>
+            <div id="layer3"></div>
+            <div id="layer4"></div>
+            <div id="layer5"></div>
+            <div id="layer6"></div>
+        </div>
+    </div>
+  </section>
+  </div>
+    <div style="height:650px; width:486px; float:right;">
+    
+    <div id="accordion3" class="accordionWrapper" style="width:486px;">
+<div class="set set1">
+    <div class="title"><img src="" width="198" height="29" /></div>
+    <div class="content"><img src="images/menu-img-1.jpg" width="486" height="198" /></div>
+</div>
+<div class="set set2">
+    <div class="title"><img src="images/menu2.jpg" width="198" height="29" /></div>
+    <div class="content"><img src="images/menu-img-2.jpg" width="486" height="198" /></div>
+</div>
+<div class="set set3">
+    <div class="title"><img src="images/menu3.jpg" width="198" height="29" /></div>
+
+    <div class="content"><img src="images/menu-img-3.jpg" width="486" height="198" /></div>
+</div>
+<div class="set set4">
+
+    <div class="title"><img src="images/menu4.jpg" width="198" height="29" /></div>
+    <div class="content"><img src="images/menu-img-4.jpg" width="486" height="198" /><br />
+</div>
+</div>
+<div class="set set5">
+    <div class="title"><img src="images/menu5.jpg" width="198" height="29" /></div>
+    <div class="content"><img src="images/menu-img-5.jpg" width="486" height="198" /></div>
+</div>
+<div class="set set6">
+
+    <div class="title"><img src="images/menu6.jpg" width="198" height="29" /></div>
+    <div class="content"><img src="images/menu-img-6.jpg" width="486" height="198" /></div>
+</div>
+<div class="set set7">
+    <div class="title"><img src="images/menu7.jpg" width="198" height="29" /></div>
+    <div class="content"><img src="images/menu-img-7.jpg" width="486" height="198" /></div>
+</div>
+</div>
+<script language="javascript" type="text/javascript">
+$(document).ready(function() {
+						   $("#accordionGiftLelo").msAccordion({defaultid:1});
+						   $("#accordion1").msAccordion({defaultid:6, autodelay:4});
+						   
+						   $("#accordionNested").msAccordion({defaultid:2});
+						   $("#accordionNestedChild").msAccordion({defaultid:2, vertical:true});
+						   
+						   $("#accordion3").msAccordion({vertical:true});
+						   }
+						   )
+</script>
+	</div>
+
+	</div>
+	
+
+</div>
+</body>
+</html>
